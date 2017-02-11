@@ -16,6 +16,7 @@ block header
                     e = JSON.parse(e.data);
                     var post = e.response;
                     console.log(post)
+                    $("title").text("kyoppie - " + post.text);
                     $("#timeline").prepend(template_post({post:post}));
                 }
                 ws.onclose = function(){
