@@ -13,6 +13,8 @@ block content
                 li: a(href="/dev/") 開発者センター
                 li 設定
                     ul
+                        if user.adminFlag
+                            li: a(href="/admin") 管理画面
                         li: a(href="/settings/name") 名前変更
                         li: a(href="/settings/password") パスワード変更
                         li: a(href="/settings/avatar") アイコン変更

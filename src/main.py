@@ -63,6 +63,9 @@ def registerPage():
 
 @app.route('/menu')
 def menuPage():
+    if (session.get("access_token")):
+        res = api.get("account/show",login=True)["response"]
+        return render_template("menu.jade",user=res)
     return render_template("menu.jade")
 
 @app.route('/users')
