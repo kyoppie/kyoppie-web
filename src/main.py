@@ -67,6 +67,8 @@ def registerPage():
 
 @app.route('/menu')
 def menuPage():
+    if g.get("my"):
+        return render_template("menu.jade",user=g.my)
     return render_template("menu.jade")
 
 @app.route('/users')
